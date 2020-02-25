@@ -1,2 +1,13 @@
 <h1>Destinations#new</h1>
-<p>Find me in app/views/destinations/new.html.erb</p>
+
+<%= form_with(model: @destination, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, placeholder: "Name" %>
+  </div>
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location, required: true, placeholder: "Location" %>
+  </div>
+  <%= f.submit %>
+<% end %>

@@ -1,3 +1,11 @@
-<h1>Destinations#index</h1>
+<h1>Your Climbing Destinations</h1>
+<h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+<hr />
+<%= link_to "Add Climbing Destination", new_destination_path %>
+<ul>
+<% @destinations.each do |destination| %>
+  <li><%= destination.name %> - <%= destination.location %></li>
+<% end %>
+</ul>
+
 <%= button_to "Log Out", destroy_user_session_path, method: :delete %>
-<h2>Welcome <%= current_user.first_name %></h2>
