@@ -1,2 +1,13 @@
-<h1>Destinations#edit</h1>
-<p>Find me in app/views/destinations/edit.html.erb</p>
+<h2>Edit Climbing Destination</h2>
+
+<%= form_with(model: @destination, local: true) do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, required: true, placeholder: "Name" %>
+  </div>
+  <div class="field">
+    <%= f.label :location %>
+    <%= f.text_field :location, required: true, placeholder: "Location" %>
+  </div>
+  <%= f.submit 'Update' %>
+<% end %>
